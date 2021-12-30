@@ -1,0 +1,25 @@
+<div class="ims-panel-header full-width content-inline" style="display: flex; background-color:lightgray; height: 50px;">
+    <div style="padding: 0px 28px;align-self: center;">
+        <span class="ims-text" >תביעת אל: {{process.superClaim.superClaimStatus.value}}</span>
+        <span class="invalid-text" *ngIf="show" style="color: red;" >  חריגה  </span>
+    </div>
+    <div style="padding: 0px 28px;align-self: center;">
+        <span class="invalid-text" *ngIf="!show" style="color: red;">{{claimRemarks()}}</span>
+    </div>
+    <div style="padding: 0px 28px;align-self: center;">
+        <span class="ims-text">מצב תביעה: </span>
+        <span class="ims-text" >{{process.superClaim.superClaimStatus.value}}</span>
+    </div>
+    <div style="padding: 0px 28px;align-self: center;">
+        <span class="invalid-text" *ngIf="process.superClaim.deathAfterDisabilityFlag">פטירה מנכות</span>
+    </div>
+    <div style="padding: 0px 28px;align-self: center;">
+        <span class="ims-text">תביעות משתתפות: </span>
+        <span class="ims-text long-text width-percent-40">{{getClaims()}}</span>
+    </div>
+    <div style="align-self: center;">
+        <button class="button button-dark" style="background-color: navy; color: white;" (click)="show=!show">
+           רענון תהליך
+        </button>
+    </div>
+</div>
